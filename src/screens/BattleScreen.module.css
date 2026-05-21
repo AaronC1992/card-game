@@ -1,0 +1,349 @@
+.screen {
+  height: 100dvh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 8px 12px;
+  position: relative;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(180, 74, 255, 0.08) 0%, transparent 50%),
+    var(--bg);
+  transition: box-shadow 0.4s ease;
+}
+
+.screen.playerTurn {
+  animation: screenEdgePulse 3s ease infinite;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 10px;
+  background: var(--bg2);
+  border-radius: var(--radius);
+  border: 1px solid var(--card-border);
+}
+
+.playerScore {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.pName {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: var(--text);
+}
+
+.koScore {
+  font-size: 0.7rem;
+  color: var(--neon-yellow);
+}
+
+.turnInfo {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--neon-pink);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.turnNum {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+}
+
+.fieldRow {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.fieldTag {
+  background: var(--bg3);
+  border: 1px solid var(--neon-purple);
+  color: var(--neon-purple);
+  font-size: 0.7rem;
+  padding: 3px 10px;
+  border-radius: 99px;
+}
+
+.battlefield {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 8px;
+  align-items: stretch;
+  flex: 1;
+  min-height: 0;
+}
+
+.playerZone {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.activeArea {
+  flex: 1;
+}
+
+.vsDivider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 8px;
+}
+
+.vsText {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  color: var(--neon-pink);
+  animation: neonFlicker 5s infinite 3s, battleIdleFloat 2.5s ease-in-out infinite;
+}
+
+.attackButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.attackBtn {
+  position: relative;
+  overflow: hidden;
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 0.8rem !important;
+  padding: 0.45rem 0.9rem !important;
+}
+
+.attackBtn::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -70%;
+  width: 45%;
+  height: 200%;
+  background: rgba(255, 255, 255, 0.18);
+  transform: skewX(-20deg);
+  transition: left 0.45s ease;
+  pointer-events: none;
+}
+
+.attackBtn:hover:not(:disabled)::before {
+  left: 140%;
+}
+
+.atkBtnName {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+}
+
+.atkBtnMeta {
+  font-size: 0.68rem;
+  opacity: 0.85;
+  background: rgba(0, 0, 0, 0.25);
+  padding: 1px 7px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.benchRow {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.benchSlot {
+  background: var(--bg3);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-sm);
+  padding: 5px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  min-width: 65px;
+}
+
+.benchIcon {
+  font-size: 1.1rem;
+}
+
+.benchName {
+  font-size: 0.6rem;
+  color: var(--text);
+  text-align: center;
+  line-height: 1.2;
+  max-width: 70px;
+}
+
+.benchHp {
+  font-size: 0.6rem;
+  color: var(--neon-pink);
+}
+
+.handSection {
+  border-top: 1px solid var(--card-border);
+  padding-top: 6px;
+  flex-shrink: 0;
+}
+
+.actionBar {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.logSection {
+  height: 140px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+  .screen {
+    padding: 6px 8px;
+    gap: 5px;
+  }
+
+  .header {
+    padding: 5px 8px;
+  }
+
+  .pName {
+    font-size: 0.85rem;
+  }
+
+  .battlefield {
+    grid-template-columns: 1fr;
+    flex: none;
+  }
+
+  /* On mobile, reverse order: opponent on top, player on bottom */
+  .playerZone:first-child {
+    order: 1;
+  }
+  .vsDivider {
+    display: none;
+  }
+  .playerZone:last-child {
+    order: 2;
+  }
+
+  .benchSlot {
+    min-width: 52px;
+    padding: 4px 6px;
+  }
+
+  .benchName {
+    font-size: 0.55rem;
+  }
+
+  .logSection {
+    height: 80px;
+  }
+
+  .actionBar button {
+    padding: 0.45rem 1rem;
+    font-size: 0.85rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .screen {
+    padding: 10px 20px;
+    gap: 10px;
+  }
+
+  .logSection {
+    height: 160px;
+  }
+}
+
+/* ── Background particles ── */
+.particles {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  bottom: -8px;
+  animation: floatParticle var(--dur, 10s) linear infinite var(--delay, 0s);
+}
+
+/* ── KO banner ── */
+.koBannerOverlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  pointer-events: none;
+  z-index: 900;
+  background: radial-gradient(ellipse at center, rgba(255, 230, 0, 0.12) 0%, transparent 65%);
+}
+
+.koBannerText {
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 12vw, 8rem);
+  color: var(--neon-yellow);
+  text-shadow:
+    0 0 30px var(--neon-yellow),
+    0 0 70px rgba(255, 230, 0, 0.5),
+    0 4px 0 rgba(0, 0, 0, 0.5);
+  letter-spacing: 6px;
+  animation: koBoomAnim 2.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.koBannerSub {
+  font-family: var(--font-display);
+  font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+  color: var(--text);
+  background: rgba(10, 10, 15, 0.75);
+  border: 1px solid var(--neon-yellow);
+  border-radius: var(--radius-sm);
+  padding: 4px 16px;
+  letter-spacing: 1px;
+  animation: turnBannerSlide 2.6s ease forwards;
+}
+
+/* ── Turn change banner ── */
+.turnBannerOverlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 800;
+}
+
+.turnBannerText {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  color: var(--neon-pink);
+  text-shadow: 0 0 20px rgba(255, 45, 120, 0.8);
+  background: rgba(10, 10, 15, 0.88);
+  border: 2px solid var(--neon-pink);
+  border-radius: var(--radius);
+  padding: 0.5rem 2rem;
+  letter-spacing: 3px;
+  white-space: nowrap;
+  animation: turnBannerSlide 1.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}

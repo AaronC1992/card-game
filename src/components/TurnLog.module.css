@@ -1,0 +1,58 @@
+.log {
+  background: var(--bg2);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 100%;
+  min-height: 120px;
+  max-height: 260px;
+}
+
+.header {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  color: var(--neon-purple);
+  padding: 6px 10px;
+  background: var(--bg3);
+  border-bottom: 1px solid var(--card-border);
+  letter-spacing: 1px;
+}
+
+.entries {
+  overflow-y: auto;
+  flex: 1;
+  padding: 6px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.entry {
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+  font-size: 0.72rem;
+  line-height: 1.4;
+  padding: 2px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  animation: fadeIn 0.2s ease;
+}
+
+.turn {
+  color: var(--text-muted);
+  font-size: 0.6rem;
+  flex-shrink: 0;
+  min-width: 22px;
+}
+
+.msg {
+  color: var(--text);
+}
+
+.attack .msg { color: var(--neon-pink); }
+.status .msg { color: #ffd54f; }
+.card .msg { color: var(--neon-cyan); }
+.ko .msg { color: var(--neon-yellow); font-weight: 700; }
+.system .msg { color: var(--text-muted); }

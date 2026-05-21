@@ -1,0 +1,150 @@
+.zone {
+  background: var(--bg3);
+  border: 2px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-height: 120px;
+  position: relative;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden;
+}
+
+.zone::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.zone.active {
+  border-color: var(--neon-pink);
+  box-shadow: 0 0 20px rgba(255, 45, 120, 0.4), inset 0 0 20px rgba(255, 45, 120, 0.05);
+}
+
+.zone.opponent {
+  border-color: var(--neon-purple);
+  box-shadow: 0 0 14px rgba(180, 74, 255, 0.25);
+}
+
+.zone.empty {
+  align-items: center;
+  justify-content: center;
+  border-style: dashed;
+  opacity: 0.5;
+}
+
+.emptyLabel {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.dmgFloat {
+  left: 50%;
+  top: 30%;
+  transform: translateX(-50%);
+  font-size: 2.4rem !important;
+  z-index: 50;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.icon {
+  font-size: 2.2rem;
+  filter: drop-shadow(0 0 6px rgba(255,255,255,0.2));
+  transition: transform 0.2s ease;
+}
+
+.iconActive {
+  animation: battleIdleFloat 2.2s ease-in-out infinite;
+  filter: drop-shadow(0 0 10px rgba(255, 45, 120, 0.6));
+}
+
+.nameArea {
+  flex: 1;
+}
+
+.creatureName {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.2;
+}
+
+.typeRow {
+  margin-top: 2px;
+}
+
+.hpDisplay {
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+  text-align: right;
+}
+
+.hpNum {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  color: var(--neon-pink);
+}
+
+.hpSep {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.hpMax {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.statusRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.statusRow :global(.status-badge) {
+  animation: statusBadgePop 0.3s ease forwards;
+}
+
+.itemsRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.itemTag {
+  font-size: 0.6rem;
+  background: var(--bg2);
+  border: 1px solid var(--card-border);
+  color: var(--text-muted);
+  padding: 2px 6px;
+  border-radius: 99px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 120px;
+}
+
+.mutedBadge {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  background: #607d8b;
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 99px;
+  letter-spacing: 0.5px;
+}

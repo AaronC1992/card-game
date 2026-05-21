@@ -1,0 +1,72 @@
+.menu {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+  background:
+    radial-gradient(ellipse at 20% 60%, rgba(180, 74, 255, 0.12) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 30%, rgba(255, 45, 120, 0.1) 0%, transparent 60%),
+    var(--bg);
+}
+
+.titleBlock {
+  text-align: center;
+}
+
+.ageWarning {
+  font-size: 0.75rem;
+  color: var(--neon-pink);
+  background: rgba(255, 45, 120, 0.1);
+  border: 1px solid var(--neon-pink);
+  padding: 4px 14px;
+  border-radius: 99px;
+  display: inline-block;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  line-height: 1.1;
+  background: linear-gradient(135deg, var(--neon-pink), var(--neon-yellow), var(--neon-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: none;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: var(--text-muted);
+  max-width: 380px;
+  margin: 0 auto;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 280px;
+}
+
+.buttons button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+  border-radius: var(--radius);
+}
+
+.statRow {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  flex-wrap: wrap;
+  justify-content: center;
+}

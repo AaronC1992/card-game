@@ -1,0 +1,370 @@
+/* ============================================================
+   FILTHY MINDED BATTLE DECK — Global Styles
+   Dark neon theme: black background, neon pink / yellow / purple
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Rajdhani:wght@400;600;700&display=swap');
+
+:root {
+  --bg: #0a0a0f;
+  --bg2: #12121a;
+  --bg3: #1a1a28;
+  --neon-pink: #ff2d78;
+  --neon-yellow: #ffe600;
+  --neon-purple: #b44aff;
+  --neon-cyan: #00f0ff;
+  --text: #f0eeff;
+  --text-muted: #8880aa;
+  --card-bg: #15152a;
+  --card-border: #333355;
+  --radius: 12px;
+  --radius-sm: 6px;
+  --shadow-pink: 0 0 16px rgba(255, 45, 120, 0.5);
+  --shadow-yellow: 0 0 16px rgba(255, 230, 0, 0.5);
+  --shadow-purple: 0 0 16px rgba(180, 74, 255, 0.5);
+  --font-display: 'Bangers', cursive;
+  --font-body: 'Rajdhani', sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.4;
+  overflow-x: hidden;
+}
+
+button {
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.95rem;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 0.5rem 1.2rem;
+  transition: filter 0.15s ease, transform 0.1s ease;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: var(--neon-pink);
+  color: #fff;
+  box-shadow: var(--shadow-pink);
+}
+
+.btn-primary:hover:not(:disabled) {
+  filter: brightness(1.2);
+}
+
+.btn-secondary {
+  background: var(--neon-purple);
+  color: #fff;
+  box-shadow: var(--shadow-purple);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  filter: brightness(1.2);
+}
+
+.btn-yellow {
+  background: var(--neon-yellow);
+  color: #0a0a0f;
+  box-shadow: var(--shadow-yellow);
+}
+
+.btn-yellow:hover:not(:disabled) {
+  filter: brightness(1.1);
+}
+
+.btn-ghost {
+  background: transparent;
+  border: 1px solid var(--card-border);
+  color: var(--text-muted);
+}
+
+.btn-ghost:hover:not(:disabled) {
+  border-color: var(--neon-pink);
+  color: var(--neon-pink);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  letter-spacing: 1px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--bg2); }
+::-webkit-scrollbar-thumb { background: var(--neon-purple); border-radius: 4px; }
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.04); }
+}
+
+@keyframes glowPulse {
+  0%, 100% { box-shadow: var(--shadow-pink); }
+  50% { box-shadow: 0 0 32px rgba(255, 45, 120, 0.9); }
+}
+
+@keyframes damageFloat {
+  0% { opacity: 1; transform: translateY(0) scale(1); }
+  100% { opacity: 0; transform: translateY(-60px) scale(1.5); }
+}
+
+@keyframes cardDraw {
+  from { opacity: 0; transform: translateY(40px) rotate(-5deg); }
+  to { opacity: 1; transform: translateY(0) rotate(0deg); }
+}
+
+@keyframes cardDealIn {
+  0% { opacity: 0; transform: translateY(70px) rotate(-12deg) scale(0.75); }
+  60% { opacity: 1; transform: translateY(-6px) rotate(2deg) scale(1.04); }
+  100% { opacity: 1; transform: translateY(0) rotate(0deg) scale(1); }
+}
+
+@keyframes turnBannerSlide {
+  0% { opacity: 0; transform: translateY(-40px) scale(0.85); }
+  20% { opacity: 1; transform: translateY(0) scale(1); }
+  75% { opacity: 1; transform: translateY(0) scale(1); }
+  100% { opacity: 0; transform: translateY(20px) scale(0.95); }
+}
+
+@keyframes koBoomAnim {
+  0% { opacity: 0; transform: scale(0.1) rotate(-18deg); }
+  28% { opacity: 1; transform: scale(1.6) rotate(6deg); }
+  50% { transform: scale(0.86) rotate(-3deg); }
+  68% { opacity: 1; transform: scale(1.12) rotate(1deg); }
+  100% { opacity: 0; transform: scale(1.3) rotate(0deg); }
+}
+
+@keyframes floatParticle {
+  0% { transform: translateY(0) scale(0) rotate(0deg); opacity: 0; }
+  8% { opacity: 0.9; transform: translateY(-8vh) scale(1) rotate(45deg); }
+  85% { opacity: 0.25; transform: translateY(-88vh) scale(0.5) rotate(200deg); }
+  100% { opacity: 0; transform: translateY(-100vh) scale(0) rotate(270deg); }
+}
+
+@keyframes neonFlicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+    opacity: 0.9;
+    text-shadow: 0 0 18px rgba(255, 45, 120, 0.9), 0 0 40px rgba(255, 45, 120, 0.4);
+  }
+  20%, 24%, 55% {
+    opacity: 0.12;
+    text-shadow: none;
+  }
+}
+
+@keyframes battleIdleFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes punchImpact {
+  0%, 100% { transform: scale(1); }
+  25% { transform: scale(1.08) rotate(-1.5deg); }
+  50% { transform: scale(0.93); }
+  75% { transform: scale(1.04); }
+}
+
+@keyframes shineSweep {
+  0% { left: -70%; }
+  100% { left: 130%; }
+}
+
+@keyframes hpPulse {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.4); }
+}
+
+@keyframes statusBadgePop {
+  0% { transform: scale(0); opacity: 0; }
+  60% { transform: scale(1.2); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes screenEdgePulse {
+  0%, 100% { box-shadow: inset 0 0 0px transparent; }
+  50% { box-shadow: inset 0 0 40px rgba(255, 45, 120, 0.18); }
+}
+
+.animate-cardDealIn { animation: cardDealIn 0.42s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+.animate-punchImpact { animation: punchImpact 0.35s ease; }
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-6px); }
+  40% { transform: translateX(6px); }
+  60% { transform: translateX(-4px); }
+  80% { transform: translateX(4px); }
+}
+
+.animate-fadeIn { animation: fadeIn 0.3s ease forwards; }
+.animate-slideUp { animation: slideInUp 0.4s ease forwards; }
+.animate-pulse { animation: pulse 2s infinite; }
+.animate-glow { animation: glowPulse 2s infinite; }
+.animate-cardDraw { animation: cardDraw 0.35s ease forwards; }
+.animate-shake { animation: shake 0.4s ease; }
+
+/* Layout utilities */
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.items-center { align-items: center; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+.gap-1 { gap: 0.25rem; }
+.gap-2 { gap: 0.5rem; }
+.gap-3 { gap: 0.75rem; }
+.gap-4 { gap: 1rem; }
+.w-full { width: 100%; }
+.h-full { height: 100%; }
+.text-center { text-align: center; }
+.overflow-auto { overflow: auto; }
+.relative { position: relative; }
+.absolute { position: absolute; }
+
+/* Rarity colors */
+.rarity-common { color: #aaa; }
+.rarity-uncommon { color: #4fc3f7; }
+.rarity-rare { color: var(--neon-purple); }
+.rarity-legendary { color: var(--neon-yellow); }
+
+/* Type colors */
+.type-chaos { color: var(--neon-pink); }
+.type-office { color: #90caf9; }
+.type-digital { color: var(--neon-cyan); }
+.type-consumer { color: #a5d6a7; }
+.type-mind { color: var(--neon-purple); }
+.type-neutral { color: var(--text-muted); }
+
+/* Status badge */
+.status-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 99px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.status-Stressed { background: #ff5722; color: #fff; }
+.status-Confused { background: #9c27b0; color: #fff; }
+.status-Burnout { background: #ff9800; color: #000; }
+.status-Muted { background: #607d8b; color: #fff; }
+.status-Petty { background: var(--neon-yellow); color: #000; }
+.status-Stunned { background: #3949ab; color: #fff; }
+
+/* HP bar */
+.hp-bar-wrap {
+  width: 100%;
+  height: 10px;
+  background: #222;
+  border-radius: 99px;
+  overflow: hidden;
+}
+.hp-bar-fill {
+  height: 100%;
+  border-radius: 99px;
+  transition: width 0.5s ease;
+}
+.hp-fill-high { background: #4caf50; }
+.hp-fill-mid { background: var(--neon-yellow); }
+.hp-fill-low { background: var(--neon-pink); }
+
+/* Modal overlay */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease;
+}
+
+.modal-box {
+  background: var(--bg2);
+  border: 1px solid var(--neon-purple);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  max-width: 420px;
+  width: 90%;
+  animation: slideInUp 0.3s ease;
+}
+
+/* Damage number */
+.damage-number {
+  position: absolute;
+  pointer-events: none;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--neon-pink);
+  text-shadow: 0 0 8px var(--neon-pink);
+  animation: damageFloat 1s ease forwards;
+  z-index: 999;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* ── Responsive global helpers ── */
+
+/* Reduce hover effects on touch devices (avoids stuck hover states) */
+@media (hover: none) {
+  .card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  button:hover:not(:disabled) {
+    filter: none;
+  }
+}
+
+/* Prevent text size inflate on mobile */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* Safe-area insets for notched phones */
+@supports (padding: env(safe-area-inset-bottom)) {
+  body {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}

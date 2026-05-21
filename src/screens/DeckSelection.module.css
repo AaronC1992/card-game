@@ -1,0 +1,51 @@
+.wrap {
+  min-height: 100dvh;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--neon-yellow);
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+  width: 100%;
+  max-width: 700px;
+}
+
+.deckCard {
+  background: var(--bg2);
+  border: 2px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  cursor: pointer;
+  transition: border-color 0.18s ease, transform 0.18s ease;
+  text-align: center;
+}
+
+.deckCard:hover {
+  border-color: var(--neon-pink);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-pink);
+}
+
+.deckName {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  color: var(--text);
+}
+
+.deckMeta {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}

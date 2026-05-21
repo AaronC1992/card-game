@@ -1,0 +1,162 @@
+.screen {
+  min-height: 100dvh;
+  background: var(--bg);
+  padding: 1.5rem 1rem 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  max-width: 700px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  letter-spacing: 0.04em;
+  color: var(--neon-yellow);
+  text-shadow: 0 0 20px rgba(255, 230, 0, 0.45);
+  margin: 0;
+}
+
+/* ── Sections ── */
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.sectionLabel {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.sectionHint {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* ── Difficulty buttons ── */
+
+.difficultyRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+
+.diffBtn {
+  background: var(--bg2);
+  border: 2px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 1rem 0.875rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  transition: border-color 0.18s, box-shadow 0.18s, background 0.18s;
+  color: var(--text);
+  text-align: left;
+}
+
+.diffBtn:hover {
+  background: var(--bg3);
+}
+
+/* Color variants */
+.diffCyan.diffBtn:hover,
+.diffCyan.diffBtnActive {
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 14px rgba(0, 240, 255, 0.3);
+  background: rgba(0, 240, 255, 0.07);
+}
+
+.diffYellow.diffBtn:hover,
+.diffYellow.diffBtnActive {
+  border-color: var(--neon-yellow);
+  box-shadow: 0 0 14px rgba(255, 230, 0, 0.3);
+  background: rgba(255, 230, 0, 0.07);
+}
+
+.diffPink.diffBtn:hover,
+.diffPink.diffBtnActive {
+  border-color: var(--neon-pink);
+  box-shadow: 0 0 14px rgba(255, 45, 120, 0.3);
+  background: rgba(255, 45, 120, 0.07);
+}
+
+.diffLabel {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  letter-spacing: 0.03em;
+}
+
+.diffCyan .diffLabel  { color: var(--neon-cyan); }
+.diffYellow .diffLabel { color: var(--neon-yellow); }
+.diffPink .diffLabel   { color: var(--neon-pink); }
+
+.diffDesc {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.35;
+}
+
+/* ── Deck grid ── */
+
+.deckGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 0.75rem;
+}
+
+.deckCard {
+  background: var(--card-bg);
+  border: 2px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  transition: border-color 0.18s, transform 0.18s, box-shadow 0.18s;
+  text-align: left;
+  color: var(--text);
+}
+
+.deckCard:hover {
+  border-color: var(--neon-pink);
+  background: rgba(255, 45, 120, 0.07);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(255, 45, 120, 0.2);
+}
+
+.deckName {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--neon-pink);
+  letter-spacing: 0.03em;
+}
+
+.deckMeta {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.deckFight {
+  margin-top: 0.6rem;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  color: var(--neon-yellow);
+  letter-spacing: 0.04em;
+}

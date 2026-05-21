@@ -1,0 +1,133 @@
+.screen {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  color: var(--neon-pink);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 260px;
+  gap: 1rem;
+  flex: 1;
+  min-height: 0;
+}
+
+.browserPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  overflow: hidden;
+}
+
+.filters {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 8px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.cardWrap {
+  cursor: pointer;
+}
+
+.deckPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  background: var(--bg2);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 1rem;
+}
+
+.deckHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.deckNameInput {
+  flex: 1;
+  background: var(--bg3);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  padding: 4px 8px;
+  outline: none;
+}
+
+.deckNameInput:focus {
+  border-color: var(--neon-pink);
+}
+
+.deckCount {
+  font-size: 0.75rem;
+  color: var(--neon-yellow);
+  white-space: nowrap;
+}
+
+.deckList {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-height: 0;
+  max-height: 500px;
+}
+
+.emptyHint {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.deckRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 6px;
+  background: var(--bg3);
+  border-radius: var(--radius-sm);
+}
+
+.deckRowName {
+  flex: 1;
+  font-size: 0.8rem;
+  color: var(--text);
+}
+
+.deckRowCount {
+  font-size: 0.75rem;
+  color: var(--neon-yellow);
+}
+
+@media (max-width: 680px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}

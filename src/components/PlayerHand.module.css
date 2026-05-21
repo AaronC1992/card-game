@@ -1,0 +1,62 @@
+.handWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.handLabel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  color: var(--neon-pink);
+  letter-spacing: 1px;
+}
+
+.apDisplay {
+  background: var(--neon-yellow);
+  color: #000;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 99px;
+}
+
+.deckCount {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  margin-left: auto;
+}
+
+.hand {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+  min-height: 200px;
+  align-items: flex-end;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+
+@media (max-width: 640px) {
+  .hand {
+    min-height: 155px;
+    gap: 6px;
+  }
+}
+
+.emptyHand {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  align-self: center;
+  padding: 1rem;
+}
+
+.hint {
+  font-size: 0.7rem;
+  color: var(--neon-yellow);
+  text-align: center;
+  animation: fadeIn 0.2s ease;
+}
